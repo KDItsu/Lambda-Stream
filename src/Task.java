@@ -1,10 +1,11 @@
 import java.time.LocalDate;
 
-//Comparableインタフェースを実装する
-    public class Task implements Comparable<Task> {
-	    private LocalDate date;
-	    private String task;
-	    private boolean done; // 追加　完了はtrue, 未完了は false
+
+public class Task implements Comparable<Task> {
+	
+    private LocalDate date;//LocalDate date: タスクの日付を保持
+    private String task;
+    private boolean done; 
 
 	public Task(LocalDate date, String task, boolean done) {
 		this.date = date;
@@ -20,13 +21,10 @@ import java.time.LocalDate;
 		return task;
 	}
 
-	// boolean型のgetterメソッドはis～とすることもあります
 	public boolean isDone() {
 		return done;
 	}
 
-	// compareToメソッドをオーバーライドする
-	// 日付で並び替えるため、LocalDateのcompareToを使う
 	@Override
 	public int compareTo(Task t) {
 		return this.date.compareTo(t.date);
