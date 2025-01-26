@@ -2,9 +2,9 @@ import java.time.LocalDate;
 
 //Comparableインタフェースを実装する
     public class Task implements Comparable<Task> {
-    private LocalDate date;
-    private String task;
-    private boolean done; // 追加　完了はtrue, 未完了は false
+	    private LocalDate date;
+	    private String task;
+	    private boolean done; // 追加　完了はtrue, 未完了は false
 
 	public Task(LocalDate date, String task, boolean done) {
 		this.date = date;
