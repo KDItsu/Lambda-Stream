@@ -11,8 +11,17 @@ public class Chapter10 {
         list.add(new Task(LocalDate.of(2021, 8, 10), "散髪に行く", false));
         list.add(new Task(LocalDate.of(2021, 11, 9), "スクールの課題を解く", false));
 
-        // 以下記述
-        
-        
+     
+        long uncompletedCount = list.stream()
+        	.filter(task -> !task.isDone())
+            .count();
+        System.out.println("未完了タスクの個数は" + uncompletedCount);
+
+    
+        System.out.println("【未完了のタスクを昇順に並び替えて一覧表示】");
+        list.stream()
+            .filter(task -> !task.isDone())
+            .sorted()
+            .forEach(System.out::println);        
     }
 }
